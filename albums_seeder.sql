@@ -1,6 +1,6 @@
 USE ymir_stephen;
-INSERT INTO albums(artist, name_record, release_date, sales, genre)
-VALUES ('Michael Jackson', 'Thriller', 1982, 50.20, 'Pop, post-disco, funk, rock'),
+INSERT INTO albums (artist, name_record, release_date, sales, genre)
+VALUES ('Michael Jackson', 'Thriller', 1982, 50.20, 'Pop, post-disco, funk, Rock'),
        ('AC/DC', 'Back in Black', 1980, 30.10, 'Hard rock'),
        ('Pink Floyd', 'The Dark Side of the Moon', 1973, 24.80, 'Progressive rock'),
        ('Eagles', 'Their Greatest Hits (1971–1975)', 1976, 41.20, 'Country rock, soft rock, folk rock'),
@@ -19,7 +19,6 @@ VALUES ('Michael Jackson', 'Thriller', 1982, 50.20, 'Pop, post-disco, funk, rock
        ('Pink Floyd', 'The Wall', 1979, 18.90, 'Progressive rock'),
        ('The Beatles', 'Sgt. Pepper''s Lonely Hearts Club Band', 1967, 18.30, 'Rock'),
        ('Michael Jackson', 'Dangerous', 1991, 17.00, 'New jack swing, R&B and pop'),
-       ('The Beatles', 'Abbey Road', 1969, 16.80, 'Rock');
---        ('Michael Jackson', 'Thriller2', 1900, 2.00, 'stuff');
---          this is giving me problems with the year, why?
+       ('The Beatles', 'Abbey Road', 1969, 16.80, 'Rock'),
+       ('Michael Jackson', 'Thriller2', 1900, 2.00, 'stuff');
 

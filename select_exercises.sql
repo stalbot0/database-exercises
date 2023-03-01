@@ -5,7 +5,7 @@ name_record FROM albums WHERE artist = 'Pink Floyd';
 
 -- The year Sgt. Pepper's Lonely Hearts Club Band was released
 SELECT 'Sgt. Pepper''s Lonely Hearts Club Band' AS 'Album',
-release_date FROM albums WHERE name_record = 'Sgt. Pepper''s Lonely Hearts Club Band' AS 'release date';
+release_date FROM albums WHERE name_record = 'Sgt. Pepper''s Lonely Hearts Club Band';
 
 -- The genre for Nevermind (this does not exist)
 SELECT 'Genre for SPLHCB: ' AS 'SPLHCB',

@@ -1,6 +1,6 @@
 USE ymir_stephen;
     TRUNCATE TABLE albums;
-INSERT INTO albums (artist, name_record, release_date, sales, genre)
+INSERT INTO albums (artist, album_name, release_date, sales, genre)
 VALUES ('Michael Jackson', 'Thriller', 1982, 50.20, 'Pop, post-disco, funk, Rock'),
        ('AC/DC', 'Back in Black', 1980, 30.10, 'Hard rock'),
        ('Whitney Houston', 'The Bodyguard', 1992, 28.7, 'soul, pop, soundtrack'),

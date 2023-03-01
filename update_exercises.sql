@@ -9,7 +9,7 @@ SELECT * FROM albums;
 
 -- All albums released before 1980
 SELECT 'Album' AS 'Albums released before 1980',
-    name_record, release_date FROM albums WHERE release_date < 1980;
+        album_name, release_date FROM albums WHERE release_date < 1980;
 UPDATE albums
 SET release_date = (release_date - 100) WHERE release_date < 1980;
 SELECT * FROM albums;
@@ -17,7 +17,7 @@ SELECT * FROM albums;
 
 -- All albums by Michael Jackson
 SELECT 'Album' AS 'Michael Jackson Albums',
-artist, name_record FROM albums WHERE artist = 'Michael Jackson';
+artist, album_name FROM albums WHERE artist = 'Michael Jackson';
 UPDATE albums
 SET artist = 'Peter Jackson' WHERE artist = 'Michael Jackson';
 SELECT * FROM albums;

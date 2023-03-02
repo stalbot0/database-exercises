@@ -3,7 +3,7 @@ USE ymir_employees;
 SELECT DISTINCT title FROM titles;
 
 # Find your query for employees whose last names start and end with 'E'. Update the query to find just the unique last names that start and end with 'E' using GROUP BY
-SELECT last_name
+SELECT last_name, COUNT(*)
 FROM employees
 WHERE last_name LIKE 'E%E'
 GROUP BY last_name;
@@ -14,7 +14,7 @@ FROM employees
 WHERE last_name LIKE 'E%E';
 
 # Find the unique last names with a 'q' but not 'qu'.
-SELECT DISTINCT last_name, COUNT(last_name)
+SELECT last_name, COUNT(*)
 FROM employees
 WHERE (last_name LIKE '%q%'
     AND last_name NOT LIKE '%qu%')
@@ -22,7 +22,7 @@ GROUP BY last_name
 ORDER BY last_name;
 
 # Update your query for 'Irena', 'Vidya', or 'Maya'. Use count(*) and GROUP BY to find the number of employees for each gender with those names.
-SELECT DISTINCT COUNT(*), gender
+SELECT COUNT(*), gender
 FROM employees
 WHERE first_name IN ('Irena', 'Vidya', 'Maya')
 GROUP BY gender;

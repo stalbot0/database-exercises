@@ -22,7 +22,7 @@ WHERE last_name LIKE '%q%'
 #Refactored #1 and #2 (used OR instead of IN, added M gender)
 SELECT first_name, last_name, gender
 FROM employees
-WHERE first_name = 'Irena' OR first_name = 'Vidya' OR first_name = 'Maya'
+WHERE (first_name = 'Irena' OR first_name = 'Vidya' OR first_name = 'Maya')
   AND gender = 'M';
 
 #Refactored #2 (last name starts OR ends with E)
@@ -34,8 +34,7 @@ WHERE last_name LIKE 'E%'
 #Refactored #2 (last name starts AND ends with E)
 SELECT first_name, last_name
 FROM employees
-WHERE last_name LIKE 'E%'
-  AND last_name LIKE '%E';
+WHERE last_name LIKE 'E%E';
 
 #Refactored #3 (last name that has q but not qu)
 SELECT first_name, last_name

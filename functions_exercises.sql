@@ -18,8 +18,8 @@ WHERE (MONTH(birth_date) = 12
   AND DAY(birth_date) = 25)
 ORDER BY YEAR(birth_date) DESC;
 
-# All employees hired in the 90's AND born on xmas
-SELECT CONCAT(first_name, ' ', last_name), birth_date, hire_date, DATEDIFF(NOW(), hire_date)
+# All employees hired in the 90's AND born on xmas, how many days they have been working at the company
+SELECT CONCAT(first_name, ' ', last_name), birth_date, hire_date, DATEDIFF(DAY(hire_date), DAY(NOW()))
 FROM employees
 WHERE (YEAR(hire_date) BETWEEN 1990 AND 1999
     AND MONTH(birth_date) = 12

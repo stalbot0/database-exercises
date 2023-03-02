@@ -7,7 +7,7 @@ ORDER BY last_name DESC, first_name DESC;
 
 # Employees last name starts and ends with E
 SELECT emp_no,
-       CONCAT(first_name, ' ', last_name) AS 'full_name'
+       CONCAT(first_name, ' ', last_name) AS full_name
 FROM employees
 WHERE last_name LIKE 'E%E'
 ORDER BY emp_no DESC;
@@ -20,9 +20,9 @@ WHERE (MONTH(birth_date) = 12
 ORDER BY YEAR(birth_date) DESC;
 
 # All employees hired in the 90's AND born on xmas, how many days they have been working at the company
-SELECT CONCAT(first_name, ' ', last_name) AS 'full_name',
+SELECT CONCAT(first_name, ' ', last_name) AS full_name,
        birth_date, hire_date,
-       CONCAT(DATEDIFF(CURDATE(), hire_date)) AS 'days_since_hire'
+       CONCAT(DATEDIFF(CURDATE(), hire_date), ' days') AS days_since_hire
 FROM employees
 WHERE (YEAR(hire_date) BETWEEN 1990 AND 1999
     AND MONTH(birth_date) = 12

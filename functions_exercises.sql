@@ -19,7 +19,7 @@ WHERE (MONTH(birth_date) = 12
     AND DAY(birth_date) = 25)
 ORDER BY YEAR(birth_date) DESC;
 
-# All employees hired in the 90's AND born on xmas, how many days they have been working at the company
+# All employees hired in the 90's AND born on xmas, oldest, most recently hired people on top, days they have been working at the company
 SELECT CONCAT(first_name, ' ', last_name) AS full_name,
        birth_date, hire_date,
        CONCAT(DATEDIFF(CURDATE(), hire_date), ' days') AS days_since_hire
@@ -27,4 +27,4 @@ FROM employees
 WHERE (YEAR(hire_date) BETWEEN 1990 AND 1999
     AND MONTH(birth_date) = 12
     AND DAY(birth_date) = 25)
-ORDER BY YEAR(birth_date), YEAR(hire_date) DESC;
+ORDER BY birth_date, hire_date DESC;

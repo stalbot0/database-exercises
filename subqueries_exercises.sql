@@ -1,34 +1,34 @@
 USE ymir_employees;
 
 # Find all the employees with the same hire date as employee 101010 using a subquery.
-SELECT CONCAT(first_name, ' ', last_name) `Full Name`, hire_date `Hire Date`
-FROM employees
+SELECT *
+FROM employees e
 WHERE hire_date IN (
-    SELECT hire_date
-    FROM employees
-    WHERE emp_no = 101010
+    SELECT e2.hire_date
+    FROM employees e2
+    WHERE e2.emp_no = 101010
 );
 
 # Find all the titles held by all employees with the first name Aamod.
-SELECT title `Titles held by employees with first name Aamod`
-FROM titles
-WHERE emp_no IN (
-    SELECT employees.emp_no
-    FROM employees
-    WHERE first_name = 'Aamod'
+SELECT t.title `Titles held by employees with first name Aamod`
+FROM titles t
+WHERE t.emp_no IN (
+    SELECT e.emp_no
+    FROM employees e
+    WHERE e.first_name = 'Aamod'
 );
 
-SELECT title `Titles held by employees with first name Aamod`
-FROM titles
-WHERE emp_no IN (
-    SELECT employees.emp_no
-    FROM employees
-    WHERE first_name = 'Aamod'
+SELECT t.title `Titles held by employees with first name Aamod`
+FROM titles t
+WHERE t.emp_no IN (
+    SELECT e.emp_no
+    FROM employees e
+    WHERE e.first_name = 'Aamod'
     )
-GROUP BY title;
+GROUP BY t.title;
 
 # Find all the current department managers that are female.
-SELECT CONCAT(e.first_name, ' ', e.last_name) `Department Manager`
+SELECT CONCAT(e.first_name, ' ', e.last_name) `Current Female Department Managers`
 FROM employees e
 WHERE emp_no IN (
     SELECT emp_no
@@ -52,12 +52,14 @@ WHERE d.dept_no IN (
 # Find the first and last name of the employee with the highest salary.
 SELECT CONCAT(e.first_name, ' ', e.last_name) `Employee with highest salary`
 FROM employees e
-WHERE e.emp_no IN (
+WHERE e.emp_no = (
     SELECT s.emp_no
     FROM salaries s
-    WHERE salary = (
-        SELECT MAX(salary)
-        FROM salaries
-        )
-    )
-LIMIT 1;
+    ORDER BY s.salary DESC
+    LIMIT 1
+    );
+#     WHERE salary = (
+#         SELECT MAX(salary)
+#         FROM salaries
+#         )
+#     )

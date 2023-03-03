@@ -61,6 +61,22 @@ WHERE YEAR(dm.to_date) = 9999
 GROUP BY d.dept_name;
 
 # Find the names of ALL current employees, their department name, and their current manager's name
+SELECT CONCAT(e.first_name, ' ', e.last_name) AS 'Employee',
+       d.dept_name AS 'Department',
+       CONCAT(e2.first_name, ' ', e2.last_name) AS 'Department Manager'
+FROM employees e
+        JOIN dept_emp de
+            ON e.emp_no = de.emp_no
+        JOIN departments d
+            ON de.dept_no = d.dept_no
+        JOIN dept_manager dm
+            ON dm.dept_no = d.dept_no
+        JOIN employees e2
+            ON e2.emp_no = dm.emp_no
+WHERE YEAR(de.to_date) = 9999
+    AND YEAR(dm.to_date) = 9999
+#     AND YEAR(t.to_date) = 9999
+ORDER BY d.dept_name, e.emp_no;
 
 # ///////////////////////////////////////////////////////////////
 # THIS IS FROM THE JOIN DATABASE EXAMPLE FOR YMIR_STEPHEN SCHEMA

@@ -40,7 +40,7 @@ FROM titles t
         JOIN departments d
             ON d.dept_no = de.dept_no
 WHERE YEAR(de.to_date) = 9999
-    AND YEAR(t.to_date) = 9999
+  AND YEAR(t.to_date) = 9999
     AND d.dept_no = 'd009'
 GROUP BY t.title
 ORDER BY COUNT(*) DESC;

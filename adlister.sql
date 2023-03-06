@@ -27,7 +27,7 @@ FROM ads a
 WHERE c.category = 'Cars' OR c.category = 'Automotive'
 group by a.title;
 
-#     For a given user, show all the ads they have posted.
+# For a given user, show all the ads they have posted.
 SELECT u.email "User's email", a.title "Ads they've posted"
 FROM ads a
     JOIN users u on a.user_id = u.id

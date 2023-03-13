@@ -6,4 +6,3 @@ SELECT CONCAT(e.emp_no, ' - ', e.last_name, ', ', e.first_name) AS full_name,
        e.birth_date AS 'DOB'
 FROM employees AS e
 ORDER BY emp_no LIMIT 10;
-# comment for push since the sql isnt pushing to my github

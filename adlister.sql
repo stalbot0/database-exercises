@@ -32,5 +32,3 @@ SELECT u.email "User's email", a.title "Ads they've posted"
 FROM ads a
     JOIN users u on a.user_id = u.id
 WHERE a.user_id = 1;
-
-# did a bunch of stuff on adlister today but needed to add comments for commit status

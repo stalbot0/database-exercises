@@ -14,3 +14,4 @@ CREATE TABLE albums (
 SHOW CREATE TABLE albums;
 
 DESCRIBE albums;
+-- comment for green square
